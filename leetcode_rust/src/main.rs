@@ -1,15 +1,21 @@
 use std::env;
 
-use daily_temperatures::daily_temperatures;
+use overlapping_intervals::erase_overlap_intervals;
 
 mod daily_temperatures;
+mod overlapping_intervals;
 
 
 fn main() {
     env::set_var("RUST_BACKTRACE", "1");
 
-    let v = vec![34,80,80,34,34,80,80,80,80,34];
-    let s = format!("{:?}", daily_temperatures(v));
+    let v:Vec<Vec<i32>> = vec![
+        vec![1,100],
+        vec![11,22],
+        vec![1,11],
+        vec![2,12]
+    ];
+    let s = format!("{:?}", erase_overlap_intervals(v));
 
     println!("{}", s);
     println!("Hello, world!");

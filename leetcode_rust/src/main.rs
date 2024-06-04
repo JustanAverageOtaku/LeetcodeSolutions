@@ -4,6 +4,7 @@ use overlapping_intervals::find_min_arrow_shots;
 
 mod daily_temperatures;
 mod overlapping_intervals;
+pub mod trie;
 
 
 fn main() {
